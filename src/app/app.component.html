@@ -1,3 +1,30 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu menu-id="pharmMenu" side="start" content-id="home">
+    <ion-header>
+      <ion-img src="../assets/images/logo.png" class="ion-padding-bottom"></ion-img>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/home/pharmacy" detail="false">
+            <ion-icon src="../../assets/images/pharmacy.svg" slot="start"></ion-icon>
+            <ion-label color="tertiary" class="ion-text-capitalize">pharmacy on-duty</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/home/emergency" detail="false">
+            <ion-icon name="medkit-outline" slot="start"></ion-icon>
+            <ion-label color="tertiary" class="ion-text-capitalize">emergency</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/home/settings" detail="false">
+            <ion-icon name="settings-outline" slot="start"></ion-icon>
+            <ion-label color="tertiary">Setting</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="home"></ion-router-outlet>
 </ion-app>
