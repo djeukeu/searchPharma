@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="pharmMenu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-capitalize">search</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngFor="let drug of drugs" [routerLink]="['/home/search', drug.id]">
+    <ion-thumbnail slot="start">
+      <ion-img [src]="'assets/images/' + drug.image"></ion-img>
+    </ion-thumbnail>
+    <ion-label class="ion-text-capitalize">
+      <h3>{{ drug.name }}</h3>
+      <p>{{ drug.price }} CFA</p>
+    </ion-label>
+  </ion-item>
+</ion-content>

@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/home/search" text=""></ion-back-button>
+      </ion-buttons>
+    <ion-title class = "ion-text-capitalize">pharmacy on-duty</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let pharmacy of pharmacys">
+    <ion-item *ngIf="pharmacy.verify == 'true'">
+      <ion-label class="ion-text-capitalize">
+        <h3>{{ pharmacy.name }}</h3>
+        <p>{{ pharmacy.location }}</p>
+      </ion-label>
+      <ion-note color="primary" slot="end" (click)="call(pharmacy.number)">Call</ion-note>
+    </ion-item>
+  </div>
+  
+</ion-content>

@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home/search" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-capitalize">{{ drug.name }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="ion-no-padding">
+    <ion-row class="ion-no-padding">
+      <ion-col>
+        <ion-img [src]="'assets/images/' + drug.image"></ion-img>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            <ion-text>
+              <h3 class="ion-text-capitalize">Description</h3>
+              <p>{{ drug.description }}</p>
+            </ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-text>
+              <h3 class="ion-text-capitalize">Side Effects</h3>
+              <p>{{ drug.sideEffect }}</p>
+            </ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-text>
+              <h3 class="ion-text-capitalize">price</h3>
+              <p>{{ drug.price }} CFA</p>
+            </ion-text>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

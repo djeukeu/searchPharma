@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home/search" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Emergency</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngFor="let phone of phones">
+    <ion-label class="ion-text-capitalize">
+      <h3>{{ phone.name }}</h3>
+      <p>{{ phone.number }}</p>
+    </ion-label>
+      <ion-note color="primary" slot="end" (click)="call(phone.number)">Call</ion-note>
+  </ion-item>
+</ion-content>
